@@ -3,7 +3,8 @@
 Canonical repository target:
 `https://github.com/MuhammadSuleman97/open-model-training-lab`
 
-Replace `[LIVE_GUIDE]` after GitHub Pages or a Hugging Face Space is live.
+Verified interactive guide:
+`https://muhammadsuleman97.github.io/open-model-training-lab/`
 
 ## GitHub repository description
 
@@ -26,7 +27,7 @@ Replace `[LIVE_GUIDE]` after GitHub Pages or a Hugging Face Space is live.
 > • “cleaner” data experiment: failed
 >
 > I published the code, failures and interactive beginner guide:
-> [LIVE_GUIDE]
+> https://muhammadsuleman97.github.io/open-model-training-lab/
 
 ## X thread
 
@@ -49,7 +50,7 @@ Replace `[LIVE_GUIDE]` after GitHub Pages or a Hugging Face Space is live.
 ### 5/5
 
 > The repository includes configs, checksums, compact metrics, rejected experiments, an interactive course, glossary, quiz and interview practice. It excludes 78+ GB of local weights/data/checkpoints. Reproduce it or tell me what I should test next:
-> [LIVE_GUIDE]
+> https://muhammadsuleman97.github.io/open-model-training-lab/
 
 ## Suggested launch image text
 

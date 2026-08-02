@@ -17,7 +17,7 @@ Phase 5 — Architecture-appropriate accuracy improvement (active)
 
 ## Current step
 
-Step 104 — Publish the sanitized learning lab and establish the public profile.
+Step 105 — Launch the public learning lab and establish the creator profile.
 
 The public source package has been restructured after Exp015. The root README
 now tells the complete Qwen → BERT → DeBERTa story, clearly labels validation
@@ -46,12 +46,20 @@ and the local source-wrapper path. Python compilation, JavaScript syntax,
 workflow YAML parsing, public JSON parsing, local Markdown links, guide
 preflight and the public-artifact check all pass.
 
-External publication is not yet complete because GitHub CLI is authenticated
-to neither the intended account nor a valid token: its configured default is a
-stale corporate account, while the desired owner is `MuhammadSuleman97`. No
-remote exists and no public repository has been created. The sanitized local
-commit now uses Muhammad Suleman and a GitHub noreply address, so the corporate
-email is not embedded in public history.
+GitHub publication is complete under the verified active account
+`MuhammadSuleman97`. The sanitized repository is public at
+`https://github.com/MuhammadSuleman97/open-model-training-lab`; the initial
+public commit uses Muhammad Suleman and a GitHub noreply address. Repository
+topics, Discussions and the homepage are configured, and the public validation
+workflow passes. The interactive guide is deployed through GitHub Actions at
+`https://muhammadsuleman97.github.io/open-model-training-lab/` and returns HTTP
+200 without authentication.
+
+The account-level Pages configuration previously pointed to the unused custom
+domain `iamsuleman.me`, causing every project page to redirect to an unresolved
+host. The user confirmed that the domain is no longer owned. Its Pages custom
+domain was removed, HTTPS was enabled on the restored `github.io` URLs, and the
+learning guide was redeployed successfully.
 
 The interactive learning guide has now been expanded into a three-model flight
 recorder. It explains, in beginner language, the complete Qwen generative-LoRA
@@ -216,12 +224,12 @@ test result.
 
 ## Next action
 
-Authenticate GitHub CLI as `MuhammadSuleman97` and verify the returned login
-before creating the public repository. After push, configure description and
-topics, enable GitHub Pages through Actions, verify the repository and live
-guide while logged out, then pin the repository. Do not use the stale corporate
-CLI identity and do not publish until the account check returns
-`MuhammadSuleman97`.
+Create the concise GitHub profile README under the `MuhammadSuleman97` profile,
+pin `open-model-training-lab`, then publish and pin the prepared X launch thread
+using the verified repository and guide URLs. After the GitHub/X launch, mirror
+the static learning guide to a Hugging Face Space and publish the longer DEV
+article. Do not distribute local model weights until their licences, model card
+and intended-use limitations have been reviewed explicitly.
 
 Experiment 015 is complete and rejected. Its five validation accuracies were
 `0.529870`, `0.853247`, `0.896104`, `0.906494`, and `0.907792`; epoch 5 was
