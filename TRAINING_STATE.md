@@ -17,7 +17,7 @@ Phase 5 — Architecture-appropriate accuracy improvement (active)
 
 ## Current step
 
-Step 105 — Launch the public learning lab and establish the creator profile.
+Step 106 — Finish GitHub profile metadata and prepare the first X launch.
 
 The public source package has been restructured after Exp015. The root README
 now tells the complete Qwen → BERT → DeBERTa story, clearly labels validation
@@ -60,6 +60,14 @@ domain `iamsuleman.me`, causing every project page to redirect to an unresolved
 host. The user confirmed that the domain is no longer owned. Its Pages custom
 domain was removed, HTTPS was enabled on the restored `github.io` URLs, and the
 learning guide was redeployed successfully.
+
+The special public profile repository `MuhammadSuleman97/MuhammadSuleman97`
+has also been created with a concise README that links to the repository and
+interactive guide. Both profile URLs return HTTP 200 without authentication.
+The GitHub account name is already `Muhammad Suleman`, but its bio and website
+are empty. Updating those two fields through the API requires the additional
+GitHub CLI `user` scope; the current token has repository and workflow access
+but GitHub correctly rejected the profile mutation without that scope.
 
 The interactive learning guide has now been expanded into a three-model flight
 recorder. It explains, in beginner language, the complete Qwen generative-LoRA
@@ -224,12 +232,13 @@ test result.
 
 ## Next action
 
-Create the concise GitHub profile README under the `MuhammadSuleman97` profile,
-pin `open-model-training-lab`, then publish and pin the prepared X launch thread
-using the verified repository and guide URLs. After the GitHub/X launch, mirror
-the static learning guide to a Hugging Face Space and publish the longer DEV
-article. Do not distribute local model weights until their licences, model card
-and intended-use limitations have been reviewed explicitly.
+Authorize the GitHub CLI `user` scope, then set the prepared profile bio and
+guide URL. Pin `open-model-training-lab` through the GitHub profile UI, then
+publish and pin the prepared X launch thread using the verified repository and
+guide URLs. After the GitHub/X launch, mirror the static learning guide to a
+Hugging Face Space and publish the longer DEV article. Do not distribute local
+model weights until their licences, model card and intended-use limitations
+have been reviewed explicitly.
 
 Experiment 015 is complete and rejected. Its five validation accuracies were
 `0.529870`, `0.853247`, `0.896104`, `0.906494`, and `0.907792`; epoch 5 was
