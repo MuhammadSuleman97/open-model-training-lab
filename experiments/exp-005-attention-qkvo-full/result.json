@@ -1,0 +1,32 @@
+{
+  "adapter_saved": false,
+  "adapter_weight_files": [],
+  "artifact_usable": false,
+  "batch_size": 1,
+  "config_sha256": "b32ac641755741fcf19700ae1ea439f56d5841c5a58fd1da0d455892247c4c93",
+  "diagnosis": "Numerical instability after 2,000 finite updates; not unified-memory exhaustion. No adapter weights were saved.",
+  "elapsed_seconds": 1737.925,
+  "failure_reason": "non-finite train loss at iteration 2050",
+  "finished_at_utc": "2026-07-30T23:48:00.161954+00:00",
+  "first_nonfinite_training_report": {
+    "iteration": 2050,
+    "loss": "nan",
+    "peak_memory_gb": 5.165
+  },
+  "last_finite_training_report": {
+    "iteration": 2000,
+    "loss": 0.228,
+    "peak_memory_gb": 5.165
+  },
+  "learning_rate": 5e-07,
+  "minimum_finite_training_report": {
+    "iteration": 2000,
+    "loss": 0.228,
+    "peak_memory_gb": 5.165
+  },
+  "name": "exp-005-attention-qkvo-full",
+  "peak_memory_gb": 5.165,
+  "started_at_utc": "2026-07-30T23:19:02.236455+00:00",
+  "status": "failed_numerical_instability",
+  "training_log_sha256": "a3b341423266e106fa9f47465c4f6ea21eba8ba1b7fa230bb967c0adc0cf48f7"
+}

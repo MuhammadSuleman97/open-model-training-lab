@@ -1,0 +1,4 @@
+# Direct dependencies only. Exact resolved versions will be recorded after the
+# first successful installation.
+mlx-lm[train]
+datasets

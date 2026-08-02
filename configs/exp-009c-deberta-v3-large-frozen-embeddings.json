@@ -1,0 +1,40 @@
+{
+  "batching": {
+    "eval_batch_size": 32,
+    "gradient_accumulation_steps": 4,
+    "train_batch_size": 8
+  },
+  "data": {
+    "labels": 77,
+    "test_rows": 3080,
+    "train_rows": 9233,
+    "validation_rows": 770
+  },
+  "experiment": "exp-009c-deberta-v3-large-frozen-embeddings",
+  "frozen_parameter_prefixes": [
+    "deberta.embeddings.word_embeddings.weight"
+  ],
+  "initialization_seed": 3414,
+  "model": {
+    "id": "microsoft/deberta-v3-large",
+    "license": "MIT",
+    "revision": "64a8c8eab3e352a784c658aef62be1662607476f",
+    "task": "sequence_classification"
+  },
+  "optimization": {
+    "epochs": 5,
+    "learning_rate": 2e-06,
+    "max_grad_norm": 1.0,
+    "optimizer": "adamw_torch",
+    "seed": 3414,
+    "warmup_steps": 15,
+    "weight_decay": 0.01
+  },
+  "success_marker": "exp_009c_probe_ok",
+  "diagnosis_success_marker": "exp_009c_diagnosis_ok",
+  "tokenization": {
+    "dynamic_padding": true,
+    "max_length": 128,
+    "truncation": true
+  }
+}

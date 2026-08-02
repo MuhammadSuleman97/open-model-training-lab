@@ -1,0 +1,30 @@
+{
+  "audit": {
+    "classifier": "logistic_regression",
+    "c": 4.0,
+    "max_iter": 500,
+    "max_features": 30000,
+    "min_df": 1,
+    "ngram_range": [1, 2],
+    "solver": "saga",
+    "suspect_probability_threshold": 0.25,
+    "top_candidates": 100,
+    "vectorizer": "word_tfidf",
+    "folds": 5,
+    "seed": 3417
+  },
+  "data": {
+    "source_train_path": "artifacts/encoder/data/train.jsonl",
+    "source_train_rows": 9233,
+    "validation_rows_loaded": 0,
+    "test_rows_loaded": 0
+  },
+  "experiment": "exp-012-label-quality-audit",
+  "selection_policy": "train-only out-of-fold audit; validation and test are never loaded",
+  "outputs": {
+    "artifact_directory": "artifacts/encoder/exp-012-label-audit",
+    "oof_predictions": "oof_predictions.jsonl",
+    "audit_report": "audit_report.json",
+    "manifest": "manifest.json"
+  }
+}

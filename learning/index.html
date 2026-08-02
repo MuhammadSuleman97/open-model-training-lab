@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="An interactive field guide to training Qwen, BERT and DeBERTa for BANKING77 on Apple Silicon.">
+  <title>Open Model Training Lab — Three Model Flight Recorder</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to the lesson</a>
+
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Open Model Training Lab home">
+      <span class="brand-mark" aria-hidden="true">OM</span>
+      <span><strong>Training Lab</strong><small>Flight recorder · M2 Max</small></span>
+    </a>
+    <nav aria-label="Lesson navigation">
+      <a href="#map">Map</a>
+      <a href="#eras">Models</a>
+      <a href="#timeline">Journey</a>
+      <a href="#failures">Failures</a>
+      <a href="#interview">Interview</a>
+    </nav>
+    <button class="utility-button" id="depthToggle" type="button" aria-pressed="false">
+      <span class="utility-dot"></span> Show deeper notes
+    </button>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top" data-track="Welcome">
+      <div class="hero-copy">
+        <p class="eyebrow">Your project, translated into plain English</p>
+        <h1>You did not just <em>train a model.</em><br>You ran a controlled investigation.</h1>
+        <p class="hero-lede">We began with a 1.7-billion-parameter language model, discovered the limits of generative classification, moved to BERT and then DeBERTa, and learned that model architecture, numerical precision, data quality and honest evaluation all matter.</p>
+        <div class="hero-actions">
+          <a class="primary-action" href="#map">Start from the beginning <span aria-hidden="true">↓</span></a>
+          <button class="text-action" id="resumeButton" type="button">Resume where I stopped</button>
+        </div>
+        <dl class="hardware-strip" aria-label="Lab setup">
+          <div><dt>Machine</dt><dd>M2 Max · 32 GB</dd></div>
+          <div><dt>Frameworks</dt><dd>MLX + PyTorch MPS</dd></div>
+          <div><dt>Models</dt><dd>Qwen → BERT → DeBERTa</dd></div>
+          <div><dt>Task</dt><dd>77 banking intents</dd></div>
+        </dl>
+      </div>
+
+      <div class="recorder" aria-label="Project signal from raw request to canonical label">
+        <div class="recorder-head">
+          <span>LIVE CONCEPT TRACE</span>
+          <span class="recording"><i></i> REC 102</span>
+        </div>
+        <div class="signal-stage active">
+          <span class="signal-index">A</span>
+          <div><small>Human request</small><p>“The cash machine charged me an extra fee.”</p></div>
+        </div>
+        <div class="signal-wire"><span></span></div>
+        <div class="signal-stage">
+          <span class="signal-index">B</span>
+          <div><small>Architecture decision</small><p>Qwen generation → encoder classification</p></div>
+        </div>
+        <div class="signal-wire"><span></span></div>
+        <div class="signal-stage result">
+          <span class="signal-index">C</span>
+          <div><small>DeBERTa classifier head</small><code>cash_withdrawal_charge</code></div>
+        </div>
+        <p class="recorder-note">All three models already understood language. We changed how they were adapted to the same 77-intent decision problem.</p>
+      </div>
+    </section>
+
+    <section class="section map-section" id="map" data-track="Project map">
+      <div class="section-heading">
+        <p class="eyebrow">01 · First principles</p>
+        <h2>What are we actually building?</h2>
+        <p>A specialist classifier—not a chatbot, not RAG, and not a model trained from zero.</p>
+      </div>
+
+      <div class="concept-grid">
+        <article class="concept-card span-two">
+          <div class="card-label">The job</div>
+          <h3>Turn messy human language into one controlled label</h3>
+          <div class="transformation" aria-label="Classification example">
+            <div><span>INPUT</span><p>“My transfer is still waiting.”</p></div>
+            <svg viewBox="0 0 90 24" role="img" aria-label="becomes"><path d="M2 12h78M70 4l10 8-10 8"/></svg>
+            <div><span>OUTPUT</span><code>pending_transfer</code></div>
+          </div>
+          <p class="deep-note">Qwen solved this by generating label tokens. BERT and DeBERTa solve it with 77 output scores called logits. The highest score becomes the predicted intent.</p>
+        </article>
+
+        <article class="concept-card">
+          <div class="card-icon data-icon" aria-hidden="true"><i></i><i></i><i></i></div>
+          <div class="card-label">The curriculum</div>
+          <h3>BANKING77</h3>
+          <p>10,003 public training questions and 3,080 test questions across 77 banking intents.</p>
+          <button class="inline-reveal" type="button" data-reveal="datasetReveal">Why public data?</button>
+          <p class="reveal-copy" id="datasetReveal" hidden>It is reproducible, inspectable, and much cheaper than generating thousands of examples in chat. Anyone can rerun our experiment.</p>
+        </article>
+
+        <article class="concept-card">
+          <div class="card-icon model-icon" aria-hidden="true"><span>1.7B</span></div>
+          <div class="card-label">The first student</div>
+          <h3>Qwen3 1.7B</h3>
+          <p>A generative language model adapted with LoRA. It taught us the full training lifecycle, but generation was not the best architecture for closed 77-way classification.</p>
+          <p class="deep-note">“1.7B” means roughly 1.7 billion learned parameters. BF16 stores each weight with 16 bits. Qwen generated text, so invalid label strings were possible.</p>
+        </article>
+
+        <article class="concept-card">
+          <div class="card-icon adapter-icon" aria-hidden="true"><span></span><span></span></div>
+          <div class="card-label">What changed later</div>
+          <h3>Classifier fine-tuning</h3>
+          <p>BERT and DeBERTa use a dedicated 77-class head. We first trained the full encoder, then refined only selected upper layers.</p>
+          <p class="deep-note">A classifier head is a small final layer that converts the encoder's representation into 77 scores. Unlike generation, it can never produce a label outside those 77 positions.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section era-section" id="eras" data-track="Three model eras">
+      <div class="section-heading compact">
+        <p class="eyebrow">02 · The architecture lesson</p>
+        <h2>Three models. One task. Three different ways to learn.</h2>
+        <p>Follow the lineage from a general-purpose generator to a purpose-built encoder classifier. The switch was an engineering decision, not an admission that the first model was useless.</p>
+      </div>
+
+      <div class="lineage-rail" aria-label="Model evolution from Qwen to BERT to DeBERTa">
+        <article class="era-card qwen-era">
+          <header><span>ERA A</span><strong>Qwen3 1.7B</strong></header>
+          <p class="era-role">Generative language model</p>
+          <div class="era-flow"><code>question</code><b>→</b><code>label tokens</code></div>
+          <dl><div><dt>Training</dt><dd>LoRA adapters</dd></div><div><dt>Best result</dt><dd>51.10% test</dd></div><div><dt>Main lesson</dt><dd>Complete LLM workflow</dd></div></dl>
+          <p class="deep-note">Qwen predicts the next token repeatedly. We needed constrained decoding because a reasonable phrase could still be an invalid BANKING77 label.</p>
+        </article>
+        <div class="lineage-junction"><span>Why switch?</span><p>A closed classification task does not need open-ended generation.</p></div>
+        <article class="era-card bert-era">
+          <header><span>ERA B</span><strong>BERT-Large</strong></header>
+          <p class="era-role">Bidirectional text encoder</p>
+          <div class="era-flow"><code>question</code><b>→</b><code>77 logits</code></div>
+          <dl><div><dt>Training</dt><dd>Full fine-tuning</dd></div><div><dt>Best result</dt><dd>91.56% validation</dd></div><div><dt>Main lesson</dt><dd>Architecture fit</dd></div></dl>
+          <p class="deep-note">BERT reads the entire question in both directions and compresses it into a representation. A new classifier head maps that representation directly to 77 choices.</p>
+        </article>
+        <div class="lineage-junction"><span>Why switch?</span><p>DeBERTa improves how content and token position are represented.</p></div>
+        <article class="era-card deberta-era current">
+          <header><span>ERA C · CHAMPION</span><strong>DeBERTa-v3-large</strong></header>
+          <p class="era-role">Stronger encoder classifier</p>
+          <div class="era-flow"><code>question</code><b>→</b><code>77 logits</code></div>
+          <dl><div><dt>Training</dt><dd>Full + upper-layer refinement</dd></div><div><dt>Champion</dt><dd>94.12% test</dd></div><div><dt>Latest</dt><dd>Exp015 rejected</dd></div></dl>
+          <p class="deep-note">DeBERTa separates token content from token position inside attention. We had to force float32 on MPS because lower-precision parameter updates became non-finite.</p>
+        </article>
+      </div>
+
+      <aside class="architecture-verdict">
+        <strong>The interview answer</strong>
+        <p>“I began with a generative LLM to learn SFT, LoRA and constrained decoding. Once the task was proven to be fixed-label classification, I moved to encoder models whose output layer directly represents the 77 intents. That architecture change improved accuracy by more than forty percentage points.”</p>
+      </aside>
+    </section>
+
+    <section class="section workbench-section" id="workbench" data-track="Model workbench">
+      <div class="section-heading compact">
+        <p class="eyebrow">03 · Model workbench</p>
+        <h2>Compare the checkpoints without mixing their meaning</h2>
+        <p>Pick a model state. Always read whether its score came from validation or reporting-only test data.</p>
+      </div>
+
+      <div class="workbench">
+        <div class="model-selector" role="tablist" aria-label="Model versions" id="modelSelector"></div>
+        <div class="instrument-panel">
+          <div class="instrument-copy">
+            <p class="instrument-kicker" id="modelKicker"></p>
+            <h3 id="modelName"></h3>
+            <p class="instrument-scope" id="modelScope"></p>
+            <p id="modelStory"></p>
+            <div class="decision-chip" id="modelDecision"></div>
+          </div>
+          <div class="gauges">
+            <div class="gauge-block">
+                <div class="gauge-label"><span>Recorded accuracy</span><strong id="accuracyValue"></strong></div>
+              <div class="gauge-track"><i id="accuracyBar"></i><b class="baseline-mark" title="Untouched baseline"></b></div>
+              <small id="accuracyNote"></small>
+            </div>
+            <div class="gauge-block">
+              <div class="gauge-label"><span>Macro F1</span><strong id="f1Value"></strong></div>
+              <div class="gauge-track secondary"><i id="f1Bar"></i></div>
+              <small>Every intent gets equal importance.</small>
+            </div>
+            <div class="gauge-block">
+              <div class="gauge-label"><span>Invalid outputs</span><strong id="invalidValue"></strong></div>
+              <div class="gauge-track danger"><i id="invalidBar"></i></div>
+              <small id="invalidNote"></small>
+            </div>
+          </div>
+          <dl class="model-facts" id="modelFacts"></dl>
+        </div>
+      </div>
+
+      <aside class="lesson-callout">
+        <span class="callout-number">!</span>
+        <div><strong>A score without its split is incomplete.</strong><p>We select encoder experiments using 770 validation examples. Test results are reporting evidence only and are now locked out of every future model decision.</p></div>
+      </aside>
+    </section>
+
+    <section class="section data-section" id="data" data-track="Data splits">
+      <div class="section-heading">
+        <p class="eyebrow">04 · Data discipline</p>
+        <h2>Three piles. Three different jobs.</h2>
+        <p>Most beginner ML mistakes come from letting information leak between these piles.</p>
+      </div>
+      <div class="split-lab">
+        <article class="split-card train">
+          <header><span>TRAIN</span><strong>9,233</strong></header>
+          <h3>The practice questions</h3>
+          <p>The optimizer sees these examples and updates either LoRA adapters or selected encoder weights.</p>
+          <div class="split-meter"><i style="--fill: 100%"></i></div>
+        </article>
+        <article class="split-card validate">
+          <header><span>VALIDATE</span><strong>770</strong></header>
+          <h3>The progress check</h3>
+          <p>Ten held-out examples per intent tell us whether training is learning or becoming unstable.</p>
+          <div class="split-meter"><i style="--fill: 32%"></i></div>
+        </article>
+        <article class="split-card test">
+          <header><span>TEST</span><strong>3,080</strong></header>
+          <h3>The final exam</h3>
+          <p>Never used to update weights. It was used for reporting on finalized champions and is now locked from future selection.</p>
+          <div class="split-meter"><i style="--fill: 58%"></i></div>
+        </article>
+      </div>
+      <div class="leakage-demo">
+        <div class="leakage-visual" aria-hidden="true"><span>TRAIN</span><i></i><span>TEST</span></div>
+        <div><h3>What is data leakage?</h3><p>It is like seeing exam answers while studying, then changing your study plan because of them. We verified zero text overlap, pinned checksums, and require every current experiment to print <code>test_rows_loaded: 0</code>.</p></div>
+      </div>
+    </section>
+
+    <section class="section timeline-section" id="timeline" data-track="Experiment journey">
+      <div class="section-heading compact">
+        <p class="eyebrow">05 · The flight recorder</p>
+        <h2>How we got here, decision by decision</h2>
+        <p>Select a stage to see what we did, why it mattered, and what it taught us.</p>
+      </div>
+      <div class="timeline-layout">
+        <ol class="timeline-nav" id="timelineNav" aria-label="Experiment stages"></ol>
+        <article class="timeline-detail" id="timelineDetail" aria-live="polite"></article>
+      </div>
+    </section>
+
+    <section class="section training-section" id="training" data-track="How training works">
+      <div class="section-heading">
+        <p class="eyebrow">06 · Inside one training step</p>
+        <h2>The same learning loop, with different moving weights</h2>
+      </div>
+      <div class="loop-diagram">
+        <article><span>1</span><h3>Encode</h3><p>Turn a banking question into token IDs and attach its correct class number.</p></article>
+        <div class="loop-arrow" aria-hidden="true">→</div>
+        <article><span>2</span><h3>Predict</h3><p>The model produces token probabilities or 77 class logits, depending on architecture.</p></article>
+        <div class="loop-arrow" aria-hidden="true">→</div>
+        <article><span>3</span><h3>Measure loss</h3><p>Cross-entropy measures how much probability the model failed to give the correct answer.</p></article>
+        <div class="loop-arrow" aria-hidden="true">→</div>
+        <article><span>4</span><h3>Update weights</h3><p>AdamW nudges adapters, the full encoder, or only unfrozen upper layers.</p></article>
+        <div class="loop-return" aria-hidden="true">Repeat with the next example ↺</div>
+      </div>
+
+      <div class="parameter-microscope">
+        <div>
+          <p class="card-label">LoRA microscope</p>
+          <h3>Frozen model, tiny moving parts</h3>
+          <p>Use the switch to compare the two adapter designs we tested.</p>
+          <div class="segmented" id="loraToggle" role="group" aria-label="LoRA target selection">
+            <button type="button" data-lora="qv" class="active">q + v</button>
+            <button type="button" data-lora="qkvo">q + k + v + o</button>
+          </div>
+        </div>
+        <div class="model-stack" id="modelStack" aria-label="Model parameter visualization"></div>
+        <dl class="microscope-stats">
+          <div><dt>Trainable values</dt><dd id="loraValues">917,504</dd></div>
+          <div><dt>Share of model</dt><dd id="loraShare">0.053%</dd></div>
+          <div><dt>Adapter file</dt><dd id="loraSize">3.68 MB</dd></div>
+        </dl>
+      </div>
+    </section>
+
+    <section class="section failure-section" id="failures" data-track="Failure lab">
+      <div class="section-heading compact">
+        <p class="eyebrow">07 · Failure lab</p>
+        <h2>The errors were part of the curriculum</h2>
+        <p>Open each incident. Learn to separate a code bug, a data problem, numerical instability, and an infrastructure limitation.</p>
+      </div>
+      <div class="failure-toolbar">
+        <div class="filter-group" id="failureFilters" role="group" aria-label="Filter failures"></div>
+        <span id="failureCount"></span>
+      </div>
+      <div class="failure-list" id="failureList"></div>
+    </section>
+
+    <section class="section metrics-section" id="metrics" data-track="Metrics">
+      <div class="section-heading">
+        <p class="eyebrow">08 · Reading the instruments</p>
+        <h2>Loss is not accuracy. Accuracy is not the whole story.</h2>
+      </div>
+      <div class="metric-cards">
+        <article><span class="metric-symbol">L</span><h3>Training loss</h3><p>How surprising the correct output tokens were during training. Useful for stability and convergence—not a final product score.</p></article>
+        <article><span class="metric-symbol">%</span><h3>Accuracy</h3><p>The fraction of test questions with the exact correct label. Easy to explain, but frequent classes can dominate.</p></article>
+        <article><span class="metric-symbol">F1</span><h3>Macro F1</h3><p>Compute F1 separately for each intent, then average. Every one of the 77 intents gets equal weight.</p></article>
+        <article><span class="metric-symbol">Ø</span><h3>Invalid rate</h3><p>Relevant to Qwen generation. Encoder classifier heads always choose one of their 77 output positions.</p></article>
+      </div>
+      <div class="metric-scenario">
+        <div class="scenario-copy"><p class="card-label">Think before revealing</p><h3>A model’s loss falls, but test accuracy falls too. Did training “work”?</h3></div>
+        <button class="primary-action small" type="button" data-reveal="metricAnswer">Reveal answer</button>
+        <p class="reveal-copy answer" id="metricAnswer" hidden>Optimization worked—the model learned its training objective better. Generalization did not. It may have overfit, learned noisy labels, or optimized an objective that does not improve held-out decisions. This is why validation selects experiments and the test set remains outside current development.</p>
+      </div>
+    </section>
+
+    <section class="section constraint-section" id="constraint" data-track="Constrained decoding">
+      <div class="section-heading compact">
+        <p class="eyebrow">09 · What Qwen taught us</p>
+        <h2>Constrained decoding puts guardrails on generation</h2>
+      </div>
+      <div class="constraint-demo">
+        <div class="token-tree">
+          <p class="card-label">Allowed token paths</p>
+          <div class="tree-root">start</div>
+          <div class="tree-branches">
+            <div><span>card_</span><i></i><small>arrival · linking · swallowed…</small></div>
+            <div><span>cash_</span><i></i><small>withdrawal_charge · …</small></div>
+            <div><span>pending_</span><i></i><small>transfer · top_up · …</small></div>
+          </div>
+        </div>
+        <div class="constraint-copy">
+          <p>At every generated token, we mask paths that cannot finish as one of the 77 labels.</p>
+          <div class="before-after">
+            <div><span>BEFORE</span><code>get_virtual_card</code><small>Meaningful, but invalid</small></div>
+            <div><span>AFTER</span><code>getting_virtual_card</code><small>Canonical taxonomy label</small></div>
+          </div>
+          <p class="deep-note">The mask changes logits before greedy selection. It never looks at the expected answer. Our matched batch-size experiment exists because changing batch shape can introduce tiny floating-point differences, so a fair A/B comparison must hold batch size constant.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section noise-section" id="noise" data-track="Data quality investigation">
+      <div class="section-heading compact">
+        <p class="eyebrow">10 · Current investigation</p>
+        <h2>When “hard examples” may actually be noisy labels</h2>
+        <p>Exp012–015 changed our question from “How can we push the model harder?” to “Should the model trust every training label equally?”</p>
+      </div>
+      <div class="noise-pipeline">
+        <article><span>EXP012</span><strong>Audit</strong><p>Five-fold out-of-fold predictions examined 9,233 training rows without reading validation or test data.</p><b>1,186 disagreements</b></article>
+        <i aria-hidden="true">→</i>
+        <article class="rejected"><span>EXP013 / 014</span><strong>Hard negatives</strong><p>We retained original labels and pushed against likely rival labels. Both experiments lost one validation answer.</p><b>Hypothesis rejected</b></article>
+        <i aria-hidden="true">→</i>
+        <article class="rejected"><span>EXP015 · REJECTED</span><strong>Noise pruning</strong><p>Removed 1,078 confidently suspicious training rows and rewrote no labels. The stable run reached only 90.78% validation.</p><b>17 fewer correct than Exp011</b></article>
+      </div>
+      <div class="noise-rules">
+        <div><span>REMOVE</span><p>The OOF model disagrees and gives the supplied label less than 25% probability.</p></div>
+        <div><span>DO NOT RELABEL</span><p>A prediction is evidence of suspicion, not proof of the correct replacement label.</p></div>
+        <div><span>DO NOT TOUCH TEST</span><p>All preparation and probing report zero validation/test rows loaded.</p></div>
+      </div>
+      <p class="deep-note">Out-of-fold means each training example is scored by a model that did not train on that example. This reduces self-confirmation, but it does not make the predictions ground truth. Exp015 proved that our threshold removed useful training signal along with suspected noise.</p>
+    </section>
+
+    <section class="section interview-section" id="interview" data-track="Interview practice">
+      <div class="section-heading">
+        <p class="eyebrow">11 · Interview room</p>
+        <h2>Explain the project like you own it</h2>
+        <p>Say your answer aloud, then reveal the model answer. The phrasing is based on what we actually did.</p>
+      </div>
+      <div class="flashcard" id="flashcard">
+        <div class="flashcard-meta"><span id="flashcardNumber"></span><span>Tap reveal only after answering</span></div>
+        <h3 id="flashcardQuestion"></h3>
+        <div class="flashcard-answer" id="flashcardAnswer" hidden></div>
+        <div class="flashcard-actions">
+          <button class="primary-action small" id="revealFlashcard" type="button">Reveal answer</button>
+          <button class="text-action" id="nextFlashcard" type="button">Next question →</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section quiz-section" id="quiz" data-track="Knowledge check">
+      <div class="quiz-intro">
+        <p class="eyebrow">12 · Knowledge check</p>
+        <h2>Can you now reason about the lab?</h2>
+        <p>This is not trivia. Each question tests a decision you will face in another training project.</p>
+        <div class="quiz-progress"><i id="quizProgress"></i></div>
+      </div>
+      <div class="quiz-card" id="quizCard"></div>
+    </section>
+
+    <section class="section glossary-section" id="glossary" data-track="Glossary">
+      <div class="section-heading compact">
+        <p class="eyebrow">13 · Pocket glossary</p>
+        <h2>Terms you should be comfortable saying</h2>
+      </div>
+      <label class="search-box"><span>Search terms</span><input id="glossarySearch" type="search" placeholder="Try: epoch, logits, leakage…"></label>
+      <div class="glossary-grid" id="glossaryGrid"></div>
+    </section>
+
+    <section class="section mission-section" id="mission" data-track="Current mission">
+      <div class="mission-card">
+        <p class="eyebrow">Current lab checkpoint</p>
+        <div class="mission-grid">
+          <div><span class="mission-number">103</span><h2>Exp015 is closed</h2></div>
+          <div><p>The noise-pruned child reached 0.907792 validation accuracy versus Exp011's 0.929870. We reject the child, preserve Exp011, and do not open the locked test for a model that already lost on validation.</p><code>champion = exp-011 · next hypothesis not yet selected</code></div>
+        </div>
+        <p class="mission-rule"><strong>Scientific decision:</strong> a stable training run is not automatically a successful model. Exp015 completed correctly and still failed its promotion rule.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div><strong>Open Model Training Lab</strong><p>Built from the project’s recorded experiments, not a generic ML tutorial.</p></div>
+    <div class="footer-progress"><span>Your reading progress</span><strong id="readingProgress">0%</strong><div><i id="readingProgressBar"></i></div></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

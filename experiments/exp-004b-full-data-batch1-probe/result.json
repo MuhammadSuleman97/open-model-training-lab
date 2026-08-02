@@ -1,0 +1,37 @@
+{
+  "adapter_bytes": 3676917,
+  "adapter_sha256": "a636e8ddafbf01d085503663a4ab71360f7e76567bcfff2cdeddf94b38ee48cb",
+  "adapter_value_count": 917504,
+  "batch_size": 1,
+  "config_sha256": "778a4bafaff4525d15b19004786a0623cb46bd70541f28ed749b10911cf551b5",
+  "elapsed_seconds": 33.528,
+  "final_training_report": {
+    "iteration": 50,
+    "loss": 7.427,
+    "peak_memory_gb": 4.951
+  },
+  "finished_at_utc": "2026-07-30T06:35:45.229919+00:00",
+  "learning_rate": 5e-07,
+  "name": "exp-004b-full-data-batch1-probe",
+  "nonfinite_adapter_values": 0,
+  "parent_failed_experiment": "exp-004-full-data",
+  "peak_memory_gb": 4.951,
+  "planned_full_epoch_updates": 9233,
+  "probe_iterations": 50,
+  "purpose": "Fifty-update stability probe after batch-size-7 failure",
+  "started_at_utc": "2026-07-30T06:35:11.702290+00:00",
+  "status": "complete",
+  "training_data_sha256": "65f0b2d327a48c64532cabfbd2622a4aef34ebbcf170add9d8664b8fa645c959",
+  "training_log_sha256": "df1eefaefb9620936b06b1fd8e4e15ad0dfefb9fe02081a33efcd98d1945f8ad",
+  "validation_data_sha256": "2c59614c9497d09e3eaddf1f7294f1cd6e5528463f33b669c52140d6ee5e2338",
+  "validation_losses": [
+    {
+      "iteration": 1,
+      "loss": 9.705
+    },
+    {
+      "iteration": 50,
+      "loss": 6.988
+    }
+  ]
+}

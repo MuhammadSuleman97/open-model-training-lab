@@ -1,0 +1,48 @@
+{
+  "adapter_bytes": 7353841,
+  "adapter_sha256": "b6454e88a364ddae305243618d52d23ac83da5273c5a347707dda52882c8a7b1",
+  "adapter_value_count": 1835008,
+  "batch_size": 1,
+  "changed_parameter": {
+    "failed_value": 5e-07,
+    "name": "learning_rate",
+    "retry_value": 2.5e-07
+  },
+  "config_sha256": "35c69f687d62cc4a437b3de6230aec53dd1d138f690d5f62e11938033ec34c6e",
+  "elapsed_seconds": 5768.549,
+  "epochs_equivalent": 1.0,
+  "final_training_report": {
+    "iteration": 9233,
+    "loss": 0.501,
+    "peak_memory_gb": 5.18
+  },
+  "finished_at_utc": "2026-07-31T15:25:21.877088+00:00",
+  "iterations": 9233,
+  "learning_rate": 2.5e-07,
+  "name": "exp-005b-attention-qkvo-lr2p5e-7",
+  "nonfinite_adapter_values": 0,
+  "parent_failed_experiment": "exp-005-attention-qkvo-full",
+  "peak_memory_gb": 5.18,
+  "purpose": "Numerically stable q/k/v/o learning-rate retry",
+  "started_at_utc": "2026-07-31T13:49:13.328231+00:00",
+  "status": "complete",
+  "training_data_sha256": "65f0b2d327a48c64532cabfbd2622a4aef34ebbcf170add9d8664b8fa645c959",
+  "training_log_sha256": "bc9c473884525e449d9833ff8f49c391af4d99b6c1b4f54ae84a9de8beeedbee",
+  "training_rows": 9233,
+  "validation_data_sha256": "2c59614c9497d09e3eaddf1f7294f1cd6e5528463f33b669c52140d6ee5e2338",
+  "validation_losses": [
+    {
+      "iteration": 1,
+      "loss": 6.959
+    },
+    {
+      "iteration": 4617,
+      "loss": 0.498
+    },
+    {
+      "iteration": 9233,
+      "loss": 0.494
+    }
+  ],
+  "validation_rows": 770
+}

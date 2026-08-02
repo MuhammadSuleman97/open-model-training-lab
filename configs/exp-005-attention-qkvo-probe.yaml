@@ -1,0 +1,35 @@
+model: models/cache/models--Qwen--Qwen3-1.7B-MLX-bf16/snapshots/720c04346ea2b095c801ebbd545c109230964cd4
+train: true
+fine_tune_type: lora
+optimizer: adam
+data: data/banking77/sft
+seed: 3409
+
+# Controlled capacity probe: Experiment 004c settings with only the LoRA
+# attention targets expanded from q/v to q/k/v/o.
+num_layers: 16
+batch_size: 1
+iters: 50
+val_batches: 1
+learning_rate: 5.0e-7
+steps_per_report: 1
+steps_per_eval: 50
+grad_accumulation_steps: 1
+
+adapter_path: adapters/exp-005-attention-qkvo-probe
+save_every: 50
+test: false
+max_seq_length: 576
+grad_checkpoint: false
+mask_prompt: true
+report_to: null
+
+lora_parameters:
+  rank: 8
+  dropout: 0.0
+  scale: 20.0
+  keys:
+    - self_attn.q_proj
+    - self_attn.k_proj
+    - self_attn.v_proj
+    - self_attn.o_proj

@@ -1,0 +1,100 @@
+{
+  "candidate_max_seq_length_truncation_counts": {
+    "512": 11,
+    "576": 0,
+    "640": 0,
+    "768": 0
+  },
+  "combined": {
+    "assistant_completion_tokens": {
+      "max": 15,
+      "min": 8,
+      "p50": 10,
+      "p90": 12,
+      "p95": 14,
+      "p99": 15
+    },
+    "full_sequence_tokens": {
+      "max": 537,
+      "min": 440,
+      "p50": 451,
+      "p90": 466,
+      "p95": 475,
+      "p99": 490
+    },
+    "masked_prompt_tokens": {
+      "max": 527,
+      "min": 432,
+      "p50": 441,
+      "p90": 455,
+      "p95": 464,
+      "p99": 479
+    }
+  },
+  "mask_prompt_safe": true,
+  "model_id": "Qwen/Qwen3-1.7B-MLX-bf16",
+  "model_revision": "720c04346ea2b095c801ebbd545c109230964cd4",
+  "name": "banking77-sft-tokenization-v1",
+  "prompt_version": "banking77-v1",
+  "recommended_max_seq_length": 576,
+  "sft_train_sha256": "65f0b2d327a48c64532cabfbd2622a4aef34ebbcf170add9d8664b8fa645c959",
+  "sft_valid_sha256": "2c59614c9497d09e3eaddf1f7294f1cd6e5528463f33b669c52140d6ee5e2338",
+  "splits": {
+    "train": {
+      "assistant_completion_tokens": {
+        "max": 15,
+        "min": 8,
+        "p50": 10,
+        "p90": 12,
+        "p95": 14,
+        "p99": 15
+      },
+      "full_sequence_tokens": {
+        "max": 537,
+        "min": 440,
+        "p50": 451,
+        "p90": 466,
+        "p95": 475,
+        "p99": 490
+      },
+      "masked_prompt_tokens": {
+        "max": 527,
+        "min": 432,
+        "p50": 441,
+        "p90": 455,
+        "p95": 464,
+        "p99": 479
+      },
+      "rows": 9233
+    },
+    "valid": {
+      "assistant_completion_tokens": {
+        "max": 15,
+        "min": 8,
+        "p50": 10,
+        "p90": 12,
+        "p95": 14,
+        "p99": 15
+      },
+      "full_sequence_tokens": {
+        "max": 520,
+        "min": 441,
+        "p50": 451,
+        "p90": 463,
+        "p95": 473,
+        "p99": 490
+      },
+      "masked_prompt_tokens": {
+        "max": 510,
+        "min": 433,
+        "p50": 440,
+        "p90": 452,
+        "p95": 462,
+        "p99": 479
+      },
+      "rows": 770
+    }
+  },
+  "total_rows": 10003,
+  "training_template_behavior": "Matches MLX-LM 0.31.3 ChatDataset: default Qwen chat-template options with loss masked through the assistant generation boundary."
+}

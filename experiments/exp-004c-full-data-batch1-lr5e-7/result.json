@@ -1,0 +1,43 @@
+{
+  "adapter_bytes": 3676917,
+  "adapter_sha256": "f6527a0dd0c554d878dc6af3d8b82bfac22edf957f219fc359eccd1688a41059",
+  "adapter_value_count": 917504,
+  "batch_size": 1,
+  "config_sha256": "f4c51c1e23484f78e30aa8f7fb5cac41310cb8479b117c276e8e5eeb00ef3040",
+  "elapsed_seconds": 5216.728,
+  "epochs_equivalent": 1.0,
+  "final_training_report": {
+    "iteration": 9233,
+    "loss": 0.278,
+    "peak_memory_gb": 5.031
+  },
+  "finished_at_utc": "2026-07-30T10:42:43.762482+00:00",
+  "iterations": 9233,
+  "learning_rate": 5e-07,
+  "name": "exp-004c-full-data-batch1-lr5e-7",
+  "nonfinite_adapter_values": 0,
+  "parent_probe": "exp-004b-full-data-batch1-probe",
+  "peak_memory_gb": 5.031,
+  "purpose": "One stable LoRA epoch over all 9,233 SFT records",
+  "started_at_utc": "2026-07-30T09:15:47.034592+00:00",
+  "status": "complete",
+  "training_data_sha256": "65f0b2d327a48c64532cabfbd2622a4aef34ebbcf170add9d8664b8fa645c959",
+  "training_log_sha256": "a07fcc7b6be63a87c97f788583837061eeb59b249c3ad460ed7bde86e0034afe",
+  "training_rows": 9233,
+  "validation_data_sha256": "2c59614c9497d09e3eaddf1f7294f1cd6e5528463f33b669c52140d6ee5e2338",
+  "validation_losses": [
+    {
+      "iteration": 1,
+      "loss": 6.959
+    },
+    {
+      "iteration": 4617,
+      "loss": 0.328
+    },
+    {
+      "iteration": 9233,
+      "loss": 0.298
+    }
+  ],
+  "validation_rows": 770
+}

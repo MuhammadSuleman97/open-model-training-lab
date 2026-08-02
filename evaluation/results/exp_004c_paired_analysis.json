@@ -1,0 +1,391 @@
+{
+  "accuracy": 0.4941558441558442,
+  "comparison_to_exp_003b": {
+    "changed_predictions": 1025,
+    "largest_net_gains": [
+      {
+        "correct_to_wrong": 0,
+        "label": "verify_my_identity",
+        "net_correct_change": 15,
+        "wrong_to_correct": 15
+      },
+      {
+        "correct_to_wrong": 2,
+        "label": "card_acceptance",
+        "net_correct_change": 11,
+        "wrong_to_correct": 13
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "card_delivery_estimate",
+        "net_correct_change": 10,
+        "wrong_to_correct": 10
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "get_disposable_virtual_card",
+        "net_correct_change": 10,
+        "wrong_to_correct": 10
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "card_linking",
+        "net_correct_change": 8,
+        "wrong_to_correct": 8
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "card_swallowed",
+        "net_correct_change": 8,
+        "wrong_to_correct": 8
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "cash_withdrawal_not_recognised",
+        "net_correct_change": 8,
+        "wrong_to_correct": 8
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "pending_transfer",
+        "net_correct_change": 8,
+        "wrong_to_correct": 8
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "request_refund",
+        "net_correct_change": 8,
+        "wrong_to_correct": 8
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "supported_cards_and_currencies",
+        "net_correct_change": 8,
+        "wrong_to_correct": 8
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "card_payment_fee_charged",
+        "net_correct_change": 7,
+        "wrong_to_correct": 7
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "declined_cash_withdrawal",
+        "net_correct_change": 7,
+        "wrong_to_correct": 7
+      }
+    ],
+    "largest_net_losses": [
+      {
+        "correct_to_wrong": 22,
+        "label": "getting_virtual_card",
+        "net_correct_change": -22,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 16,
+        "label": "order_physical_card",
+        "net_correct_change": -16,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 11,
+        "label": "wrong_exchange_rate_for_cash_withdrawal",
+        "net_correct_change": -11,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 10,
+        "label": "apple_pay_or_google_pay",
+        "net_correct_change": -10,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 10,
+        "label": "passcode_forgotten",
+        "net_correct_change": -10,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 10,
+        "label": "unable_to_verify_identity",
+        "net_correct_change": -10,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 10,
+        "label": "why_verify_identity",
+        "net_correct_change": -10,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 10,
+        "label": "wrong_amount_of_cash_received",
+        "net_correct_change": -10,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 8,
+        "label": "exchange_charge",
+        "net_correct_change": -8,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 7,
+        "label": "Refund_not_showing_up",
+        "net_correct_change": -7,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 7,
+        "label": "fiat_currency_support",
+        "net_correct_change": -7,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 6,
+        "label": "lost_or_stolen_phone",
+        "net_correct_change": -6,
+        "wrong_to_correct": 0
+      }
+    ],
+    "transitions": {
+      "correct_to_correct": 1270,
+      "correct_to_wrong": 189,
+      "wrong_to_correct": 252,
+      "wrong_to_wrong": 1369
+    }
+  },
+  "comparison_to_untouched": {
+    "changed_predictions": 1064,
+    "largest_net_gains": [
+      {
+        "correct_to_wrong": 0,
+        "label": "card_payment_fee_charged",
+        "net_correct_change": 29,
+        "wrong_to_correct": 29
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "card_acceptance",
+        "net_correct_change": 13,
+        "wrong_to_correct": 13
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "direct_debit_payment_not_recognised",
+        "net_correct_change": 13,
+        "wrong_to_correct": 13
+      },
+      {
+        "correct_to_wrong": 1,
+        "label": "unable_to_verify_identity",
+        "net_correct_change": 11,
+        "wrong_to_correct": 12
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "card_payment_not_recognised",
+        "net_correct_change": 9,
+        "wrong_to_correct": 9
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "top_up_by_card_charge",
+        "net_correct_change": 9,
+        "wrong_to_correct": 9
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "card_arrival",
+        "net_correct_change": 8,
+        "wrong_to_correct": 8
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "wrong_exchange_rate_for_cash_withdrawal",
+        "net_correct_change": 8,
+        "wrong_to_correct": 8
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "extra_charge_on_statement",
+        "net_correct_change": 7,
+        "wrong_to_correct": 7
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "top_up_failed",
+        "net_correct_change": 7,
+        "wrong_to_correct": 7
+      },
+      {
+        "correct_to_wrong": 1,
+        "label": "getting_spare_card",
+        "net_correct_change": 6,
+        "wrong_to_correct": 7
+      },
+      {
+        "correct_to_wrong": 0,
+        "label": "reverted_card_payment?",
+        "net_correct_change": 5,
+        "wrong_to_correct": 5
+      }
+    ],
+    "largest_net_losses": [
+      {
+        "correct_to_wrong": 15,
+        "label": "why_verify_identity",
+        "net_correct_change": -15,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 12,
+        "label": "atm_support",
+        "net_correct_change": -12,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 9,
+        "label": "country_support",
+        "net_correct_change": -8,
+        "wrong_to_correct": 1
+      },
+      {
+        "correct_to_wrong": 8,
+        "label": "verify_top_up",
+        "net_correct_change": -8,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 7,
+        "label": "pin_blocked",
+        "net_correct_change": -7,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 7,
+        "label": "transaction_charged_twice",
+        "net_correct_change": -7,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 6,
+        "label": "balance_not_updated_after_cheque_or_cash_deposit",
+        "net_correct_change": -6,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 7,
+        "label": "fiat_currency_support",
+        "net_correct_change": -6,
+        "wrong_to_correct": 1
+      },
+      {
+        "correct_to_wrong": 5,
+        "label": "card_not_working",
+        "net_correct_change": -5,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 6,
+        "label": "cash_withdrawal_charge",
+        "net_correct_change": -5,
+        "wrong_to_correct": 1
+      },
+      {
+        "correct_to_wrong": 5,
+        "label": "compromised_card",
+        "net_correct_change": -5,
+        "wrong_to_correct": 0
+      },
+      {
+        "correct_to_wrong": 5,
+        "label": "edit_personal_details",
+        "net_correct_change": -5,
+        "wrong_to_correct": 0
+      }
+    ],
+    "transitions": {
+      "correct_to_correct": 1284,
+      "correct_to_wrong": 190,
+      "wrong_to_correct": 238,
+      "wrong_to_wrong": 1368
+    }
+  },
+  "exact_mcnemar": {
+    "correct_to_wrong": 190,
+    "discordant_total": 428,
+    "two_sided_p_value": 0.02298531881932948,
+    "wrong_to_correct": 238
+  },
+  "invalid_labels": 159,
+  "macro_f1": 0.4979829260030387,
+  "name": "exp-004c-paired-error-analysis-v1",
+  "predictions_sha256": "eda8217ecc3065e615faa60b0af671b38178e9d41dede68f8a8d9abe387fcb27",
+  "test_rows": 3080,
+  "test_sha256": "d12d6e3bc4c3103966ae786dc435913c0c563dfa328f5a3646d0e62cfeeb474d",
+  "top_invalid_outputs": [
+    {
+      "count": 31,
+      "prediction": "get_virtual_card"
+    },
+    {
+      "count": 31,
+      "prediction": "refund_not_showing_up"
+    },
+    {
+      "count": 24,
+      "prediction": "top_up_by_card"
+    },
+    {
+      "count": 13,
+      "prediction": "card_compromised"
+    },
+    {
+      "count": 9,
+      "prediction": "top_up_pending"
+    },
+    {
+      "count": 6,
+      "prediction": "getting_physical_card"
+    },
+    {
+      "count": 3,
+      "prediction": "reversed_card_payment?"
+    },
+    {
+      "count": 3,
+      "prediction": "declined_direct_debit_payment"
+    },
+    {
+      "count": 3,
+      "prediction": "pending_payment"
+    },
+    {
+      "count": 2,
+      "prediction": "blocked_account"
+    },
+    {
+      "count": 2,
+      "prediction": "blocked_card_payment"
+    },
+    {
+      "count": 2,
+      "prediction": "transfer_failed"
+    },
+    {
+      "count": 2,
+      "prediction": "card_withdrawal_not_recognised"
+    },
+    {
+      "count": 2,
+      "prediction": "top_up_by_google_pay"
+    },
+    {
+      "count": 2,
+      "prediction": "top_up_by_apple_pay_or_google_pay"
+    }
+  ]
+}

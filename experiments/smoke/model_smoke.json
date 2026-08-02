@@ -1,0 +1,21 @@
+{
+  "dataset_revision": "57ec275d8078af65b7731c2a98be812d844a6d6b",
+  "elapsed_seconds_including_load": 4.129,
+  "example_index": 0,
+  "expected": "card_arrival",
+  "finish_reason": "stop",
+  "generation_tokens": 6,
+  "generation_tokens_per_second": 22.843,
+  "model_id": "Qwen/Qwen3-1.7B-MLX-bf16",
+  "model_revision": "720c04346ea2b095c801ebbd545c109230964cd4",
+  "peak_memory_gb": 3.803,
+  "prediction": "lost_or_stolen_card",
+  "prediction_correct": false,
+  "prompt_tokens": 441,
+  "prompt_tokens_per_second": 246.73,
+  "prompt_version": "banking77-v1",
+  "raw_output": "lost_or_stolen_card",
+  "request": "How do I locate my card?",
+  "split": "test",
+  "valid_label": true
+}

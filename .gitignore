@@ -1,0 +1,84 @@
+.DS_Store
+.venv/
+.venv-*/
+__pycache__/
+*.py[cod]
+.env
+.env.*
+!.env.example
+
+# Downloaded datasets and generated training records.
+data/*
+!data/README.md
+!data/DATASET_SOURCES.md
+!data/banking77/
+data/banking77/*
+!data/banking77/manifest.json
+!data/banking77/sft_manifest.json
+!data/banking77/tokenization_report.json
+!data/banking77/exp_002_data_manifest.json
+!data/banking77/exp_003_data_manifest.json
+
+# Model weights and machine-specific generated manifest.
+models/*
+!models/README.md
+!models/model_manifest.example.json
+
+# LoRA weights stay out of normal Git history. Publish selected adapters through
+# a release or model registry rather than committing binary training outputs.
+adapters/*
+!adapters/.gitkeep
+
+# Discriminative-classifier downloads, checkpoints and final weights.
+artifacts/
+
+# Keep compact experiment records, not logs or binary weights.
+experiments/*
+!experiments/README.md
+!experiments/smoke/
+experiments/smoke/*
+!experiments/smoke/model_smoke.json
+!experiments/exp-001-pipeline/
+experiments/exp-001-pipeline/*
+!experiments/exp-001-pipeline/result.json
+!experiments/exp-001-pipeline/adapter_smoke.json
+!experiments/exp-002-balanced-539/
+experiments/exp-002-balanced-539/*
+!experiments/exp-002-balanced-539/result.json
+!experiments/exp-003-balanced-1925/
+experiments/exp-003-balanced-1925/*
+!experiments/exp-003-balanced-1925/result.json
+!experiments/exp-003b-balanced-1925-lr2p5e-6/
+experiments/exp-003b-balanced-1925-lr2p5e-6/*
+!experiments/exp-003b-balanced-1925-lr2p5e-6/result.json
+!experiments/exp-004-full-data-batch7-probe/
+experiments/exp-004-full-data-batch7-probe/*
+!experiments/exp-004-full-data-batch7-probe/result.json
+!experiments/exp-004-full-data/
+experiments/exp-004-full-data/*
+!experiments/exp-004-full-data/result.json
+!experiments/exp-004b-full-data-batch1-probe/
+experiments/exp-004b-full-data-batch1-probe/*
+!experiments/exp-004b-full-data-batch1-probe/result.json
+!experiments/exp-004c-full-data-batch1-lr5e-7/
+experiments/exp-004c-full-data-batch1-lr5e-7/*
+!experiments/exp-004c-full-data-batch1-lr5e-7/result.json
+!experiments/exp-005-attention-qkvo-probe/
+experiments/exp-005-attention-qkvo-probe/*
+!experiments/exp-005-attention-qkvo-probe/result.json
+!experiments/exp-005-attention-qkvo-full/
+experiments/exp-005-attention-qkvo-full/*
+!experiments/exp-005-attention-qkvo-full/result.json
+!experiments/exp-005b-attention-qkvo-lr2p5e-7/
+experiments/exp-005b-attention-qkvo-lr2p5e-7/*
+!experiments/exp-005b-attention-qkvo-lr2p5e-7/result.json
+
+# Retain metric summaries; regenerate row-level predictions locally.
+evaluation/pilot.jsonl
+evaluation/results/*
+!evaluation/results/.gitkeep
+!evaluation/results/*_summary.json
+!evaluation/results/*_analysis.json
+
+# Local package-resolution scratch files.
+environment/*.tmp

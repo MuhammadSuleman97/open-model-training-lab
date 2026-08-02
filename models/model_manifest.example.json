@@ -1,0 +1,17 @@
+{
+  "architectures": [
+    "Qwen3ForCausalLM"
+  ],
+  "license": "Apache-2.0",
+  "model_id": "Qwen/Qwen3-1.7B-MLX-bf16",
+  "model_type": "qwen3",
+  "precision": "bfloat16",
+  "quantized": false,
+  "resolved_revision": "720c04346ea2b095c801ebbd545c109230964cd4",
+  "snapshot_path": "models/cache/.../snapshots/720c04346ea2b095c801ebbd545c109230964cd4",
+  "weight_bytes": 3441185437,
+  "weight_files": [
+    "model.safetensors"
+  ],
+  "weight_gib": 3.205
+}

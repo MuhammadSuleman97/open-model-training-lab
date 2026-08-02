@@ -1,0 +1,49 @@
+{
+  "adapter_bytes": 7353841,
+  "adapter_sha256": "1780ba08774b2293dc619cc7d4ebb07e9ebe3e511ed27bda8b01e8e25e9b20a2",
+  "adapter_value_count": 1835008,
+  "batch_size": 1,
+  "changed_factor": {
+    "baseline": [
+      "self_attn.q_proj",
+      "self_attn.v_proj"
+    ],
+    "name": "lora_attention_targets",
+    "probe": [
+      "self_attn.q_proj",
+      "self_attn.k_proj",
+      "self_attn.v_proj",
+      "self_attn.o_proj"
+    ]
+  },
+  "config_sha256": "2fcfdd39842ea301ed2630ac046d681e442dfd0aab0bb9f0df28180f15267749",
+  "elapsed_seconds": 28.667,
+  "final_training_report": {
+    "iteration": 50,
+    "loss": 5.203,
+    "peak_memory_gb": 5.058
+  },
+  "finished_at_utc": "2026-07-30T11:15:00.630855+00:00",
+  "learning_rate": 5e-07,
+  "name": "exp-005-attention-qkvo-probe",
+  "nonfinite_adapter_values": 0,
+  "parent_experiment": "exp-004c-full-data-batch1-lr5e-7",
+  "peak_memory_gb": 5.058,
+  "probe_iterations": 50,
+  "purpose": "Capacity and stability probe for q/k/v/o LoRA targets",
+  "started_at_utc": "2026-07-30T11:14:31.963884+00:00",
+  "status": "complete",
+  "training_data_sha256": "65f0b2d327a48c64532cabfbd2622a4aef34ebbcf170add9d8664b8fa645c959",
+  "training_log_sha256": "65c3d1257813119319f8a1a28741c8ddb319831b2fe5e0581b3dbc40c8bd65ea",
+  "validation_data_sha256": "2c59614c9497d09e3eaddf1f7294f1cd6e5528463f33b669c52140d6ee5e2338",
+  "validation_losses": [
+    {
+      "iteration": 1,
+      "loss": 9.705
+    },
+    {
+      "iteration": 50,
+      "loss": 5.225
+    }
+  ]
+}

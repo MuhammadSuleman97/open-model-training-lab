@@ -1,0 +1,39 @@
+{
+  "adapter_bytes": 3676917,
+  "adapter_sha256": "98e8943a37f965b986cadc5638ae8ee62f8ca54896e9228e3ad95cbcb0dcc5e4",
+  "adapter_value_count": 917504,
+  "batch_size": 7,
+  "config_sha256": "09f93570f7b817f364d3d3e84e6debe5e6993140ee2d1bf83a9181c6bdcbf05c",
+  "elapsed_seconds": 70.127,
+  "final_training_report": {
+    "iteration": 10,
+    "loss": 5.228,
+    "peak_memory_gb": 12.534
+  },
+  "finished_at_utc": "2026-07-30T03:51:02.404194+00:00",
+  "learning_rate": 3.5e-06,
+  "name": "exp-004-full-data-batch7-probe",
+  "nonfinite_adapter_values": 0,
+  "peak_memory_gb": 12.534,
+  "planned_full_epoch_updates": 1319,
+  "planned_full_validation_batches": 110,
+  "probe_iterations": 10,
+  "purpose": "Batch-size and memory probe before full-data training",
+  "started_at_utc": "2026-07-30T03:49:52.277336+00:00",
+  "status": "complete",
+  "training_data_sha256": "65f0b2d327a48c64532cabfbd2622a4aef34ebbcf170add9d8664b8fa645c959",
+  "training_log_sha256": "c709856eeeca55f4bbefbde5dffe0381c6919f82a3672532be9fcfdd92c7fc00",
+  "training_rows_available": 9233,
+  "validation_data_sha256": "2c59614c9497d09e3eaddf1f7294f1cd6e5528463f33b669c52140d6ee5e2338",
+  "validation_losses": [
+    {
+      "iteration": 1,
+      "loss": 6.811
+    },
+    {
+      "iteration": 10,
+      "loss": 5.456
+    }
+  ],
+  "validation_rows_available": 770
+}

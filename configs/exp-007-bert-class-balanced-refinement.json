@@ -1,0 +1,46 @@
+{
+  "batching": {
+    "eval_batch_size": 32,
+    "gradient_accumulation_steps": 4,
+    "train_batch_size": 8
+  },
+  "data": {
+    "labels": 77,
+    "test_rows": 3080,
+    "train_rows": 9233,
+    "validation_rows": 770
+  },
+  "evaluation": {
+    "parent_validation_accuracy": 0.9155844155844156,
+    "primary_metric": "accuracy",
+    "program_launch_target": 0.95,
+    "promotion_policy": "strictly exceed parent validation accuracy",
+    "test_policy": "remain sealed during refinement"
+  },
+  "experiment": "exp-007-bert-class-balanced-refinement",
+  "model": {
+    "parent_experiment": "exp-006-bert-large-classifier",
+    "parent_weight_sha256": "b32b1e1c1bcc543762c6687fa7f92f35de0a62deb72a9c0c92087d808d5e8c55",
+    "task": "sequence_classification"
+  },
+  "objective": {
+    "class_weight_formula": "normalized inverse square root of training frequency",
+    "label_smoothing": 0.0,
+    "loss": "weighted_cross_entropy"
+  },
+  "optimization": {
+    "epochs": 2,
+    "learning_rate": 1e-06,
+    "max_grad_norm": 1.0,
+    "optimizer": "adamw_torch",
+    "seed": 3412,
+    "warmup_steps": 29,
+    "weight_decay": 0.01
+  },
+  "output_dir": "artifacts/encoder/exp-007",
+  "tokenization": {
+    "dynamic_padding": true,
+    "max_length": 128,
+    "truncation": true
+  }
+}

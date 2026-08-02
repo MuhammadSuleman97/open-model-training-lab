@@ -1,0 +1,72 @@
+{
+  "schema_version": 1,
+  "task": "BANKING77 intent classification",
+  "splits": {
+    "train_rows": 9233,
+    "validation_rows": 770,
+    "test_rows": 3080
+  },
+  "selection_policy": "Validation selects experiments. Test is reporting-only and excluded from later selection.",
+  "experiments": [
+    {
+      "id": "exp-006",
+      "model": "google-bert/bert-large-cased",
+      "status": "superseded",
+      "validation_accuracy": 0.915584,
+      "validation_macro_f1": 0.914837,
+      "test_evaluated": false
+    },
+    {
+      "id": "exp-009d",
+      "model": "microsoft/deberta-v3-large",
+      "status": "superseded",
+      "validation_accuracy": 0.925974,
+      "validation_macro_f1": 0.926117,
+      "test_accuracy": 0.940260,
+      "test_macro_f1": 0.940117,
+      "test_role": "fixed reporting-only benchmark"
+    },
+    {
+      "id": "exp-010",
+      "model": "microsoft/deberta-v3-large",
+      "status": "superseded",
+      "validation_accuracy": 0.928571,
+      "validation_macro_f1": 0.928234,
+      "test_evaluated": false
+    },
+    {
+      "id": "exp-011",
+      "model": "microsoft/deberta-v3-large",
+      "status": "validation_champion",
+      "validation_accuracy": 0.929870,
+      "validation_macro_f1": 0.929701,
+      "test_accuracy": 0.941234,
+      "test_macro_f1": 0.941173,
+      "test_role": "reporting-only after selection"
+    },
+    {
+      "id": "exp-013",
+      "model": "microsoft/deberta-v3-large",
+      "status": "rejected",
+      "validation_accuracy": 0.928571,
+      "validation_macro_f1": 0.928234,
+      "test_evaluated": false
+    },
+    {
+      "id": "exp-014",
+      "model": "microsoft/deberta-v3-large",
+      "status": "rejected",
+      "validation_accuracy": 0.928571,
+      "validation_macro_f1": 0.928234,
+      "test_evaluated": false
+    },
+    {
+      "id": "exp-015",
+      "model": "microsoft/deberta-v3-large",
+      "status": "rejected",
+      "validation_accuracy": 0.907792,
+      "validation_macro_f1": 0.907391,
+      "test_evaluated": false
+    }
+  ]
+}

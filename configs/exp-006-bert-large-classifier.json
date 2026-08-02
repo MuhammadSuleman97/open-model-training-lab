@@ -1,0 +1,43 @@
+{
+  "batching": {
+    "eval_batch_size": 32,
+    "gradient_accumulation_steps": 4,
+    "train_batch_size": 8
+  },
+  "data": {
+    "labels": 77,
+    "test_rows": 3080,
+    "train_rows": 9233,
+    "validation_rows": 770
+  },
+  "evaluation": {
+    "experiment_accuracy_gate": 0.9,
+    "primary_metric": "accuracy",
+    "program_launch_target": 0.95,
+    "report_macro_f1": true,
+    "test_policy": "run once after validation-only model selection"
+  },
+  "experiment": "exp-006-bert-large-classifier",
+  "model": {
+    "id": "google-bert/bert-large-cased",
+    "license": "Apache-2.0",
+    "revision": "a25a4b00fd23b14ba7b902af2b756931b6677ba9",
+    "task": "sequence_classification"
+  },
+  "optimization": {
+    "epochs": 5,
+    "learning_rate": 2e-05,
+    "max_grad_norm": 1.0,
+    "optimizer": "adamw_torch",
+    "trainer_handles_gradient_accumulation_normalization": true,
+    "seed": 3411,
+    "warmup_ratio": 0.1,
+    "weight_decay": 0.01
+  },
+  "output_dir": "artifacts/encoder/exp-006-bert-large-classifier",
+  "tokenization": {
+    "dynamic_padding": true,
+    "max_length": 128,
+    "truncation": true
+  }
+}

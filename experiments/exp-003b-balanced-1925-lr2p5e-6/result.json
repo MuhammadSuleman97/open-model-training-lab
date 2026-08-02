@@ -1,0 +1,48 @@
+{
+  "adapter_bytes": 3676917,
+  "adapter_sha256": "5357a9c472a24ede76497653d12bb338ddf3795817e1be06a5b98e01068b3983",
+  "changed_parameter": {
+    "failed_value": 1e-05,
+    "name": "learning_rate",
+    "retry_value": 2.5e-06
+  },
+  "config_sha256": "e4c55b872363ca59be1c1f427c06400918aeaf53a8929250cc04741017423ce4",
+  "elapsed_seconds": 1239.901,
+  "epochs_equivalent": 1.0,
+  "final_training_report": {
+    "iteration": 1925,
+    "loss": 0.236,
+    "peak_memory_gb": 5.031
+  },
+  "finished_at_utc": "2026-07-30T02:29:56.837123+00:00",
+  "name": "exp-003b-balanced-1925-lr2p5e-6",
+  "parent_failed_experiment": "exp-003-balanced-1925",
+  "peak_memory_gb": 5.031,
+  "purpose": "Stable one-pass retry with a 4x lower learning rate",
+  "safety_abort": {
+    "after_iteration": 100,
+    "train_loss_threshold": 5.0,
+    "triggered": false
+  },
+  "started_at_utc": "2026-07-30T02:09:16.936371+00:00",
+  "status": "complete",
+  "training_data_sha256": "9277ac00d508719cfc7d3bd72c78ca10f0aac7b9a0c3e464932bb0fb75f70aba",
+  "training_log_sha256": "4aef73086a9aeed66bb4f493c40a9e95c32c890ca81357701dabe826129f69ba",
+  "training_rows": 1925,
+  "validation_data_sha256": "4e5fca4c4b39c129f925d5f2957745081f6b81b38fd65a2473a4ce97b6b0d72d",
+  "validation_losses": [
+    {
+      "iteration": 1,
+      "loss": 7.011
+    },
+    {
+      "iteration": 963,
+      "loss": 0.396
+    },
+    {
+      "iteration": 1925,
+      "loss": 0.375
+    }
+  ],
+  "validation_rows": 154
+}

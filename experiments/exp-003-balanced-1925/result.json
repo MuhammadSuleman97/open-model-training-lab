@@ -1,0 +1,38 @@
+{
+  "adapter_tensor_count": 64,
+  "adapter_value_count": 917504,
+  "all_adapter_values_nonfinite": true,
+  "artifact_usable": false,
+  "config_sha256": "6fd1f96800b6c7578c41eb9972bb373b4c2a4d4c9b555083f30caaab9f39c088",
+  "failed_adapter_sha256": "15add87352b703c447bb49dc099cae6bcbf7d617e598de0945e527da34be6771",
+  "failure_reason": "Training loss diverged and became non-finite; the saved adapter contains non-finite values and must not be used for inference.",
+  "first_nonfinite_training_report": {
+    "iteration": 950,
+    "loss": "nan",
+    "peak_memory_gb": 5.029
+  },
+  "first_nonfinite_validation_report": {
+    "iteration": 963,
+    "loss": "nan"
+  },
+  "last_finite_training_report": {
+    "iteration": 900,
+    "loss": 12.259,
+    "peak_memory_gb": 5.029
+  },
+  "minimum_finite_training_report": {
+    "iteration": 100,
+    "loss": 0.285,
+    "peak_memory_gb": 4.959
+  },
+  "name": "exp-003-balanced-1925",
+  "nonfinite_tensor_count": 64,
+  "nonfinite_value_count": 917504,
+  "peak_memory_gb": 5.029,
+  "status": "failed_numerical_instability",
+  "training_data_sha256": "9277ac00d508719cfc7d3bd72c78ca10f0aac7b9a0c3e464932bb0fb75f70aba",
+  "training_log_sha256": "c681c4aa4b744ebf5cd65404e61a0f07688b6862a74e61816ad721750f6ba7cb",
+  "training_rows": 1925,
+  "validation_data_sha256": "4e5fca4c4b39c129f925d5f2957745081f6b81b38fd65a2473a4ce97b6b0d72d",
+  "validation_rows": 154
+}

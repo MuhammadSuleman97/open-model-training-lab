@@ -1,0 +1,31 @@
+{
+  "batching": {
+    "gradient_accumulation_steps": 4,
+    "train_batch_size": 8
+  },
+  "data": {
+    "train_rows": 11357,
+    "validation_rows": 770,
+    "test_rows_loaded": 0
+  },
+  "experiment": "exp-010-deberta-targeted-oversampling",
+  "force_float32": true,
+  "model": {
+    "parent_experiment": "exp-009d-deberta-v3-large-float32",
+    "parent_model_path": "artifacts/encoder/exp-009d/selected-model",
+    "task": "sequence_classification"
+  },
+  "optimization": {
+    "learning_rate": 2e-06,
+    "max_grad_norm": 1.0,
+    "optimizer": "adamw_torch",
+    "probe_steps": 2,
+    "seed": 3415,
+    "weight_decay": 0.01
+  },
+  "selection_policy": "validation_only; test data is never loaded",
+  "tokenization": {
+    "max_length": 128,
+    "truncation": true
+  }
+}

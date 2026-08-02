@@ -1,0 +1,35 @@
+model: models/cache/models--Qwen--Qwen3-1.7B-MLX-bf16/snapshots/720c04346ea2b095c801ebbd545c109230964cd4
+train: true
+fine_tune_type: lora
+optimizer: adam
+data: data/banking77/sft
+seed: 3409
+
+# Numerical-stability retry of Experiment 005. Only the learning rate changes,
+# from 5e-7 to 2.5e-7.
+num_layers: 16
+batch_size: 1
+iters: 9233
+val_batches: 770
+learning_rate: 2.5e-7
+steps_per_report: 50
+steps_per_eval: 4617
+grad_accumulation_steps: 1
+
+adapter_path: adapters/exp-005b-attention-qkvo-lr2p5e-7
+save_every: 9233
+test: false
+max_seq_length: 576
+grad_checkpoint: false
+mask_prompt: true
+report_to: null
+
+lora_parameters:
+  rank: 8
+  dropout: 0.0
+  scale: 20.0
+  keys:
+    - self_attn.q_proj
+    - self_attn.k_proj
+    - self_attn.v_proj
+    - self_attn.o_proj

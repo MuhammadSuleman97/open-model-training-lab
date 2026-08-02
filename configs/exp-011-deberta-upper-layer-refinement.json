@@ -1,0 +1,60 @@
+{
+  "batching": {
+    "gradient_accumulation_steps": 4,
+    "train_batch_size": 8
+  },
+  "data": {
+    "source_train_rows": 9233,
+    "validation_rows": 770,
+    "test_rows_loaded": 0
+  },
+  "experiment": "exp-011-deberta-upper-layer-refinement",
+  "force_float32": true,
+  "freeze": {
+    "encoder_layer_start": 20,
+    "encoder_layer_end": 23,
+    "train_classifier": true,
+    "train_pooler": true
+  },
+  "model": {
+    "parent_experiment": "exp-010-deberta-targeted-oversampling",
+    "parent_model_path": "artifacts/encoder/exp-010/selected-model",
+    "task": "sequence_classification"
+  },
+  "optimization": {
+    "learning_rate": 5e-07,
+    "max_grad_norm": 1.0,
+    "optimizer": "adamw_torch",
+    "probe_steps": 2,
+    "seed": 3416,
+    "warmup_steps": 0,
+    "weight_decay": 0.01
+  },
+  "selection_policy": "validation_only; observed test metrics excluded",
+  "target_labels": [
+    "apple_pay_or_google_pay",
+    "card_acceptance",
+    "card_payment_not_recognised",
+    "card_payment_wrong_exchange_rate",
+    "card_swallowed",
+    "compromised_card",
+    "contactless_not_working",
+    "declined_card_payment",
+    "declined_transfer",
+    "exchange_charge",
+    "failed_transfer",
+    "pending_card_payment",
+    "pending_top_up",
+    "pending_transfer",
+    "reverted_card_payment?",
+    "top_up_failed",
+    "top_up_reverted",
+    "topping_up_by_card",
+    "unable_to_verify_identity",
+    "verify_my_identity"
+  ],
+  "tokenization": {
+    "max_length": 128,
+    "truncation": true
+  }
+}

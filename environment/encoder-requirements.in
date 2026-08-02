@@ -1,0 +1,10 @@
+# Encoder experiments use a separate environment so PyTorch/Transformers cannot
+# disturb the completed MLX/Qwen experiment. Exact versions are locked only
+# after a verified installation on Apple Silicon.
+torch>=2.4,<3
+transformers>=5,<6
+accelerate>=1,<2
+scikit-learn>=1.5,<2
+safetensors>=0.4,<1
+sentencepiece>=0.2,<0.3
+protobuf>=7,<8

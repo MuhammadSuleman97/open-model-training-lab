@@ -1,0 +1,23 @@
+{
+  "files": {
+    "train.jsonl": {
+      "bytes": 1133879,
+      "sha256": "5234027d1cbe8a06a3e4545f810837eebe489b2efa78e8ff446f56e77775b701"
+    },
+    "valid.jsonl": {
+      "bytes": 324168,
+      "sha256": "4e5fca4c4b39c129f925d5f2957745081f6b81b38fd65a2473a4ce97b6b0d72d"
+    }
+  },
+  "labels": 77,
+  "name": "exp-002-balanced-539-data",
+  "purpose": "First data-size-controlled LoRA experiment with exactly seven training and two validation examples per BANKING77 intent.",
+  "seed": 3408,
+  "source_sft_train_sha256": "65f0b2d327a48c64532cabfbd2622a4aef34ebbcf170add9d8664b8fa645c959",
+  "source_sft_valid_sha256": "2c59614c9497d09e3eaddf1f7294f1cd6e5528463f33b669c52140d6ee5e2338",
+  "train_per_label": 7,
+  "train_rows": 539,
+  "train_valid_text_overlap": 0,
+  "valid_per_label": 2,
+  "valid_rows": 154
+}

@@ -1,0 +1,46 @@
+{
+  "batching": {
+    "eval_batch_size": 32,
+    "gradient_accumulation_steps": 4,
+    "train_batch_size": 8
+  },
+  "data": {
+    "labels": 77,
+    "test_rows": 3080,
+    "train_rows": 9233,
+    "validation_rows": 770
+  },
+  "evaluation": {
+    "parent_validation_accuracy": 0.9155844155844156,
+    "primary_metric": "accuracy",
+    "program_launch_target": 0.95,
+    "promotion_policy": "strictly exceed parent validation accuracy",
+    "test_policy": "remain sealed during refinement"
+  },
+  "experiment": "exp-008-bert-label-smoothing-refinement",
+  "model": {
+    "parent_experiment": "exp-006-bert-large-classifier",
+    "parent_weight_sha256": "b32b1e1c1bcc543762c6687fa7f92f35de0a62deb72a9c0c92087d808d5e8c55",
+    "task": "sequence_classification"
+  },
+  "objective": {
+    "class_weights": "uniform",
+    "label_smoothing": 0.05,
+    "loss": "label_smoothed_cross_entropy"
+  },
+  "optimization": {
+    "epochs": 2,
+    "learning_rate": 1e-06,
+    "max_grad_norm": 1.0,
+    "optimizer": "adamw_torch",
+    "seed": 3413,
+    "warmup_steps": 29,
+    "weight_decay": 0.01
+  },
+  "output_dir": "artifacts/encoder/exp-008",
+  "tokenization": {
+    "dynamic_padding": true,
+    "max_length": 128,
+    "truncation": true
+  }
+}

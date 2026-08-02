@@ -1,0 +1,22 @@
+{
+  "adapter_sha256": "647187eccde4d6e872f04bc66358ee18a84a891627ee6f26d73944f819c07361",
+  "dataset_revision": "57ec275d8078af65b7731c2a98be812d844a6d6b",
+  "elapsed_seconds_including_load": 3.23,
+  "example_index": 0,
+  "expected": "card_arrival",
+  "finish_reason": "stop",
+  "generation_tokens": 4,
+  "model_id": "Qwen/Qwen3-1.7B-MLX-bf16",
+  "model_revision": "720c04346ea2b095c801ebbd545c109230964cd4",
+  "name": "exp-001-pipeline-adapter-smoke",
+  "peak_memory_gb": 3.994,
+  "prediction": "card_delivery_estimate",
+  "prediction_correct": false,
+  "prompt_tokens": 441,
+  "prompt_version": "banking77-v1",
+  "raw_output": "card_delivery_estimate",
+  "request": "How do I locate my card?",
+  "split": "test",
+  "untouched_prediction": "lost_or_stolen_card",
+  "valid_label": true
+}

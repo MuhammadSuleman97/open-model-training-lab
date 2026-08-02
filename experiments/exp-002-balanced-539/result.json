@@ -1,0 +1,37 @@
+{
+  "adapter_bytes": 3676917,
+  "adapter_sha256": "cd2111999465a49d060f512d3eefd01534d940dba8a817ece826d53a2faaf764",
+  "config_sha256": "62f7102b7d2b45654e565f558db8966c21ffb08c6a16134f1a95f13a0954d973",
+  "elapsed_seconds": 464.347,
+  "epochs_equivalent": 1.0,
+  "final_training_report": {
+    "iteration": 539,
+    "loss": 0.253,
+    "peak_memory_gb": 4.968
+  },
+  "finished_at_utc": "2026-07-30T01:29:28.192816+00:00",
+  "name": "exp-002-balanced-539",
+  "peak_memory_gb": 4.968,
+  "purpose": "One-pass LoRA learning from 539 balanced examples",
+  "started_at_utc": "2026-07-30T01:21:43.845741+00:00",
+  "status": "complete",
+  "training_data_sha256": "5234027d1cbe8a06a3e4545f810837eebe489b2efa78e8ff446f56e77775b701",
+  "training_log_sha256": "2fc4423126c122d30a8723793b96452188690a269ecc725964dcd9e7caec4eb3",
+  "training_rows": 539,
+  "validation_data_sha256": "4e5fca4c4b39c129f925d5f2957745081f6b81b38fd65a2473a4ce97b6b0d72d",
+  "validation_losses": [
+    {
+      "iteration": 1,
+      "loss": 7.011
+    },
+    {
+      "iteration": 270,
+      "loss": 0.268
+    },
+    {
+      "iteration": 539,
+      "loss": 0.277
+    }
+  ],
+  "validation_rows": 154
+}

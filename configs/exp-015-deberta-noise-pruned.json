@@ -1,0 +1,46 @@
+{
+  "batching": {
+    "eval_batch_size": 32,
+    "gradient_accumulation_steps": 4,
+    "train_batch_size": 8
+  },
+  "data": {
+    "audit_probability_threshold": 0.25,
+    "filter_rule": "model_disagrees_and_given_probability_below_threshold",
+    "source_train_rows": 9233,
+    "test_rows_loaded": 0,
+    "validation_rows": 770
+  },
+  "evaluation": {
+    "deberta_base_validation_accuracy": 0.925974025974026,
+    "exp_011_champion_validation_accuracy": 0.9298701298701298,
+    "primary_metric": "accuracy",
+    "program_launch_target": 0.95,
+    "test_policy": "never load during development"
+  },
+  "experiment": "exp-015-deberta-noise-pruned",
+  "force_float32": true,
+  "frozen_parameter_prefixes": [],
+  "model": {
+    "id": "microsoft/deberta-v3-large",
+    "revision": "64a8c8eab3e352a784c658aef62be1662607476f",
+    "starting_point": "original_pretrained_checkpoint",
+    "task": "sequence_classification"
+  },
+  "optimization": {
+    "epochs": 5,
+    "learning_rate": 2e-05,
+    "max_grad_norm": 1.0,
+    "optimizer": "adamw_torch",
+    "seed": 3414,
+    "warmup_steps": 128,
+    "weight_decay": 0.01
+  },
+  "selection_policy": "validation_only; observed test metrics excluded",
+  "success_marker": "exp_015_probe_ok",
+  "tokenization": {
+    "dynamic_padding": true,
+    "max_length": 128,
+    "truncation": true
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "adapter_bytes": 3676917,
+  "adapter_sha256": "647187eccde4d6e872f04bc66358ee18a84a891627ee6f26d73944f819c07361",
+  "config_sha256": "da7aa791795d334a8bca4a23eac82ed9d441423ff8cd970c6296d53174554413",
+  "elapsed_seconds": 14.361,
+  "finished_at_utc": "2026-07-30T01:05:23.679680+00:00",
+  "name": "exp-001-pipeline",
+  "purpose": "LoRA pipeline validation; not an accuracy experiment",
+  "sft_train_sha256": "65f0b2d327a48c64532cabfbd2622a4aef34ebbcf170add9d8664b8fa645c959",
+  "sft_valid_sha256": "2c59614c9497d09e3eaddf1f7294f1cd6e5528463f33b669c52140d6ee5e2338",
+  "started_at_utc": "2026-07-30T01:05:09.318612+00:00",
+  "status": "complete",
+  "tokenization_report_sha256": "2fb10cd85a5c8c2c71dfa9acb33781dad8e3f79fb8bb42950edf99a50e9456cd",
+  "training_log_sha256": "2b30200dac2c571905ea44e9d81a7b3f1703f96f09440da1418c7245567fe9f8"
+}

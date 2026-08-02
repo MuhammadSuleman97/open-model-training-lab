@@ -1,0 +1,7 @@
+{
+  "prompt_version": "banking77-v1",
+  "system_template": "You are a banking intent classifier. Choose exactly one label from the allowed labels for the user's banking request. Return only that label and nothing else.\n\nAllowed labels:\n{labels}",
+  "label_separator": "\n",
+  "enable_thinking": false,
+  "max_output_tokens": 24
+}

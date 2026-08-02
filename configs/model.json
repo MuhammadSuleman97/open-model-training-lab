@@ -1,0 +1,9 @@
+{
+  "model_id": "Qwen/Qwen3-1.7B-MLX-bf16",
+  "requested_revision": "main",
+  "precision": "bfloat16",
+  "parameter_count_billions": 1.7,
+  "quantized": false,
+  "license": "Apache-2.0",
+  "enable_thinking": false
+}

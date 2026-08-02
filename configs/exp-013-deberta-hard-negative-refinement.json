@@ -1,0 +1,43 @@
+{
+  "batching": {
+    "gradient_accumulation_steps": 4,
+    "train_batch_size": 8
+  },
+  "data": {
+    "source_train_rows": 9233,
+    "validation_rows": 770,
+    "test_rows_loaded": 0,
+    "hard_negative_probability_threshold": 0.5
+  },
+  "experiment": "exp-013-deberta-hard-negative-refinement",
+  "force_float32": true,
+  "freeze": {
+    "encoder_layer_start": 20,
+    "encoder_layer_end": 23,
+    "train_classifier": true,
+    "train_pooler": true
+  },
+  "hard_negative_loss": {
+    "margin": 0.5,
+    "weight": 0.25
+  },
+  "model": {
+    "parent_experiment": "exp-011-deberta-upper-layer-refinement",
+    "parent_model_path": "artifacts/encoder/exp-011/selected-model",
+    "task": "sequence_classification"
+  },
+  "optimization": {
+    "learning_rate": 2.5e-7,
+    "max_grad_norm": 1.0,
+    "optimizer": "adamw_torch",
+    "probe_steps": 2,
+    "seed": 3417,
+    "warmup_steps": 0,
+    "weight_decay": 0.01
+  },
+  "selection_policy": "validation_only; audit and rival labels are train-only; observed test metrics excluded",
+  "tokenization": {
+    "max_length": 128,
+    "truncation": true
+  }
+}
