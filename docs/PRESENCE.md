@@ -53,9 +53,16 @@ technical lessons:
 This is the best additional home for this project. Hugging Face supports model
 repositories, model cards and static HTML Spaces.
 
+Published Space:
+
+`https://huggingface.co/spaces/msulemans/open-model-training-lab`
+
+The Space contains only the static guide and its card; it does not distribute
+model weights or generated dataset rows.
+
 Recommended sequence:
 
-1. Publish `learning/` as a public static Space.
+1. Keep the published static Space linked from GitHub and X.
 2. Link the Space to BANKING77 and the base models in its card metadata.
 3. Publish an Exp011 model repository only if you intentionally choose to
    distribute the selected weights and have verified licences, size and model

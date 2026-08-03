@@ -34,6 +34,9 @@ were excluded from every later experiment decision.
 
 The interactive Flight Recorder teaches the entire project in plain English:
 
+Read it online at the [GitHub Pages guide](https://msulemans.github.io/open-model-training-lab/)
+or the [Hugging Face Static Space](https://huggingface.co/spaces/msulemans/open-model-training-lab).
+
 ```bash
 python3 scripts/serve_learning_lab.py
 ```
