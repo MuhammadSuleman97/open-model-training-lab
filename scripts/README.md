@@ -9,6 +9,9 @@ reading the directory alphabetically.
 - `verify_environment.py` / `verify_mlx.py` — Qwen/MLX environment and GPU.
 - `verify_encoder_environment.py` — BERT/DeBERTa PyTorch MPS environment.
 - `serve_learning_lab.py` — run or preflight the interactive guide.
+- `publish_huggingface_space.py` — create/update the public static Space using
+  only the guide README, HTML, CSS and JavaScript; it rejects common secret and
+  local-path patterns before uploading.
 
 ## Data reconstruction
 

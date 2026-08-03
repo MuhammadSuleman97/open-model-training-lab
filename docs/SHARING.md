@@ -1,10 +1,10 @@
 # Launch copy
 
 Canonical repository target:
-`https://github.com/MuhammadSuleman97/open-model-training-lab`
+`https://github.com/msulemans/open-model-training-lab`
 
 Verified interactive guide:
-`https://muhammadsuleman97.github.io/open-model-training-lab/`
+`https://msulemans.github.io/open-model-training-lab/`
 
 ## GitHub repository description
 
@@ -27,7 +27,7 @@ Verified interactive guide:
 > • “cleaner” data experiment: failed
 >
 > I published the code, failures and interactive beginner guide:
-> https://muhammadsuleman97.github.io/open-model-training-lab/
+> https://msulemans.github.io/open-model-training-lab/
 
 ## X thread
 
@@ -50,7 +50,7 @@ Verified interactive guide:
 ### 5/5
 
 > The repository includes configs, checksums, compact metrics, rejected experiments, an interactive course, glossary, quiz and interview practice. It excludes 78+ GB of local weights/data/checkpoints. Reproduce it or tell me what I should test next:
-> https://muhammadsuleman97.github.io/open-model-training-lab/
+> https://msulemans.github.io/open-model-training-lab/
 
 ## Suggested launch image text
 

@@ -46,13 +46,13 @@ and the local source-wrapper path. Python compilation, JavaScript syntax,
 workflow YAML parsing, public JSON parsing, local Markdown links, guide
 preflight and the public-artifact check all pass.
 
-GitHub publication is complete under the verified active account
-`MuhammadSuleman97`. The sanitized repository is public at
-`https://github.com/MuhammadSuleman97/open-model-training-lab`; the initial
+GitHub publication is complete under the renamed account `msulemans`. The
+sanitized repository is public at
+`https://github.com/msulemans/open-model-training-lab`; the initial
 public commit uses Muhammad Suleman and a GitHub noreply address. Repository
 topics, Discussions and the homepage are configured, and the public validation
 workflow passes. The interactive guide is deployed through GitHub Actions at
-`https://muhammadsuleman97.github.io/open-model-training-lab/` and returns HTTP
+`https://msulemans.github.io/open-model-training-lab/` and returns HTTP
 200 without authentication.
 
 The account-level Pages configuration previously pointed to the unused custom
@@ -61,10 +61,10 @@ host. The user confirmed that the domain is no longer owned. Its Pages custom
 domain was removed, HTTPS was enabled on the restored `github.io` URLs, and the
 learning guide was redeployed successfully.
 
-The special public profile repository `MuhammadSuleman97/MuhammadSuleman97`
-has also been created with a concise README that links to the repository and
+The public profile README repository created before the username change has a
+concise README that links to the repository and
 interactive guide. Both profile URLs return HTTP 200 without authentication.
-The GitHub account name is already `Muhammad Suleman`, but its bio and website
+The renamed GitHub account is `msulemans`; its bio and website
 are empty. Updating those two fields through the API requires the additional
 GitHub CLI `user` scope; the current token has repository and workflow access
 but GitHub correctly rejected the profile mutation without that scope.
@@ -91,7 +91,7 @@ reproduction notes, CI, a public-artifact checker and ready-to-edit X launch
 copy. The prospective public source is 114 files and approximately 610 KB;
 model weights, adapters, copied data, logs, caches, environments and row-level
 predictions are confirmed ignored. The public identity is now Muhammad Suleman,
-GitHub user `MuhammadSuleman97`, with the recommended repository name
+GitHub user `msulemans`, with the recommended repository name
 `open-model-training-lab`. Publication is now deliberately paused. The new
 goal is at least 95% BANKING77 accuracy through an architecture-appropriate
 sequence classifier. The original BANKING77 paper reports 93.66% for full-data
@@ -232,13 +232,14 @@ test result.
 
 ## Next action
 
-Authorize the GitHub CLI `user` scope, then set the prepared profile bio and
-guide URL. Pin `open-model-training-lab` through the GitHub profile UI, then
-publish and pin the prepared X launch thread using the verified repository and
-guide URLs. After the GitHub/X launch, mirror the static learning guide to a
-Hugging Face Space and publish the longer DEV article. Do not distribute local
-model weights until their licences, model card and intended-use limitations
-have been reviewed explicitly.
+The GitHub profile-scope update and pinning remain optional follow-up work.
+The static guide is now also published as the public Hugging Face Space
+`https://huggingface.co/spaces/msulemans/open-model-training-lab`. Its commit
+uploaded only `README.md`, `index.html`, `styles.css` and `app.js`; no model
+weights or dataset rows were uploaded. Next, publish the prepared DEV article
+and optionally submit the interactive guide to Show HN. Do not distribute
+local model weights until their licences, model card and intended-use
+limitations have been reviewed explicitly.
 
 Experiment 015 is complete and rejected. Its five validation accuracies were
 `0.529870`, `0.853247`, `0.896104`, `0.906494`, and `0.907792`; epoch 5 was
@@ -640,11 +641,13 @@ validation split.
 - [x] Strengthened the public checker for model binaries, access tokens and
   private corporate identity.
 - [x] Revalidated the 1.17 MB prospective public source package.
-- [ ] Authenticate GitHub CLI as `MuhammadSuleman97`.
-- [ ] Create and push the sanitized initial public repository.
-- [ ] Configure repository metadata, Pages and logged-out access.
-- [ ] Create or update the GitHub profile README and pin the repository.
-- [ ] Publish the X launch thread after the live guide URL is verified.
+- [x] Authenticate GitHub CLI and create the sanitized public repository.
+- [x] Configure repository metadata, Pages and logged-out access.
+- [x] Create the public profile README repository.
+- [x] Publish the X launch thread after the live guide URL was verified.
+- [x] Publish the static learning guide as a Hugging Face Space.
+- [ ] Add the optional GitHub profile bio and pin the repository after the
+  username rename is settled.
 
 ## Experiments
 

@@ -7,7 +7,7 @@ authors:
     family-names: Suleman
 year: 2026
 license: MIT
-repository-code: "https://github.com/MuhammadSuleman97/open-model-training-lab"
+repository-code: "https://github.com/msulemans/open-model-training-lab"
 abstract: >-
   A reproducible Apple Silicon learning project that compares Qwen3 LoRA,
   BERT-Large and DeBERTa-v3-large for BANKING77 intent classification and

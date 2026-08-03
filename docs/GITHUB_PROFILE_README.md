@@ -16,8 +16,8 @@ I trained Qwen, BERT and DeBERTa on BANKING77 using an Apple M2 Max:
 - numerical failures diagnosed instead of hidden; and
 - an interactive beginner course with glossary, quiz and interview practice.
 
-[Explore the repository](https://github.com/MuhammadSuleman97/open-model-training-lab)
-· [Open the learning guide](https://muhammadsuleman97.github.io/open-model-training-lab/)
+[Explore the repository](https://github.com/msulemans/open-model-training-lab)
+· [Open the learning guide](https://msulemans.github.io/open-model-training-lab/)
 
 ## Currently learning
 
@@ -35,7 +35,7 @@ I trained Qwen, BERT and DeBERTa on BANKING77 using an Apple M2 Max:
 
 <!--
 To use this profile README, create a separate public repository named exactly
-MuhammadSuleman97 under the MuhammadSuleman97 account, then copy this file to
+msulemans under the msulemans account, then copy this file to
 that repository as README.md. Keep the profile concise as more projects are
 added.
 -->

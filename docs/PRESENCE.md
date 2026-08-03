@@ -9,7 +9,7 @@ artifact, then explain it repeatedly at different depths.
 
 GitHub owns the source, history, issues and reproducibility discussion.
 
-Profile setup for `MuhammadSuleman97`:
+Profile setup for `msulemans`:
 
 - **Name:** Muhammad Suleman
 - **Bio:** `Building reproducible open-model experiments on Apple Silicon. MLX, PyTorch MPS, evaluation and failures included.`
