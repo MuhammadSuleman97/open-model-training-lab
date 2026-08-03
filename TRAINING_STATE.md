@@ -1,7 +1,7 @@
 # Open Model Training Lab — State
 
-Last updated: 2026-08-02 (Australia/Sydney)
-Status: Active
+Last updated: 2026-08-03 (Australia/Sydney)
+Status: Complete; retained as a reproducible learning lab
 
 ## Current phase
 
@@ -9,15 +9,27 @@ Phase 1 — Supervised fine-tuning fundamentals (complete)
 
 Phase 2 — Controlled model-improvement experiments (complete)
 
-Phase 3 — Learning consolidation and interview preparation (active)
+Phase 3 — Learning consolidation and interview preparation (complete)
 
-Phase 4 — Open-source publication preparation (active)
+Phase 4 — Open-source publication preparation (complete)
 
-Phase 5 — Architecture-appropriate accuracy improvement (active)
+Phase 5 — Architecture-appropriate accuracy improvement (complete)
 
 ## Current step
 
-Step 106 — Finish GitHub profile metadata and prepare the first X launch.
+Step 107 — Preserve the champion artifacts and archive the completed lab.
+
+The local workspace was conservatively cleaned after GitHub, GitHub Pages,
+X and Hugging Face publication. Its disk footprint fell from approximately
+83 GB to 1.7 GB. Rebuildable Python environments, downloaded base-model
+caches, rejected and duplicated checkpoints, interrupted runs, training logs,
+generated prediction rows and temporary files were removed. The canonical
+Experiment 011 DeBERTa selected model remains local at 1.6 GB, and its
+`model.safetensors` SHA-256 was reverified as
+`5c94f7bbeef65ce5d71d4be3c23d8cf88bbd92330408d69a9d04c4e2a42186bd`.
+The promoted Experiment 005b Qwen LoRA adapter also remains local. Git history
+passed `git fsck`, and `main` remained synchronized with `origin/main` before
+this state update.
 
 The public source package has been restructured after Exp015. The root README
 now tells the complete Qwen → BERT → DeBERTa story, clearly labels validation
